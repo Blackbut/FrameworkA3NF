@@ -1,0 +1,7 @@
+#include "CSSA3\CSSA3_header.hpp"
+#include "config.cpp"
+
+author = "=]NF[= ";
+respawn = 3;
+respawnDialog = 0;
+respawnDelay = 99999999;

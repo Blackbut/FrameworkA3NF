@@ -1,0 +1,807 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"rhsusf_c_troops",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"rhsusf_c_hmmwv",
+		"rhsusf_vehicles",
+		"A3_Structures_F_Mil_Shelters",
+		"rhs_c_troops",
+		"rhs_c_bmp",
+		"A3_Structures_F_Mil_BagFence",
+		"A3_Structures_F_Mil_Fortification",
+		"A3_Structures_F_Walls",
+		"rhs_c_a2port_car",
+		"rhs_c_a2port_air",
+		"rhs_c_bmd",
+		"a3_map_altis",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Soft_F_Gamma_HEMTT",
+		"A3_Structures_F_Heli_Items_Airport",
+		"A3_Supplies_F_Heli_Bladders",
+		"A3_Static_F_Mortar_01",
+		"rhs_c_trucks",
+		"rhs_c_a2port_armor",
+		"rhs_c_cars",
+		"A3_Supplies_F_Heli_CargoNets",
+		"RHS_US_A2Port_Armor",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_Civil",
+		"aia_takistan_config",
+		"A3_Weapons_F_Ammoboxes"
+	};
+	addOnsAuto[]=
+	{
+		"rhsusf_c_troops",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_Civil",
+		"A3_Weapons_F_Ammoboxes",
+		"aia_takistan_config"
+	};
+	randomSeed=12681545;
+	class Intel
+	{
+		briefingName="[NF] Co@30 - Framework A3";
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		rainForced=1;
+		year=2035;
+		month=2;
+		day=16;
+		hour=16;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=13;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={60.439545,-0.055602655,69.736816};
+					azimut=-362.70599;
+					id=0;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""PL""];";
+					description="PL";
+				};
+				class Item1
+				{
+					position[]={57.98642,-0.054451127,66.774414};
+					azimut=-362.70599;
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="rhsusf_navy_marpat_wd_medic";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""MEDIC""];";
+					description="MEDIC - PL";
+				};
+				class Item2
+				{
+					position[]={60.52597,-0.03266887,72.089844};
+					id=2;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="plhq_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={75.159271,0.012890705,63.589355};
+					azimut=-360.41385;
+					id=3;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_squadleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""SL""];";
+					description="SL - Alpha";
+				};
+				class Item1
+				{
+					position[]={72.593597,-0.056319036,60.711914};
+					azimut=-360.414;
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="rhsusf_navy_marpat_wd_medic";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""MEDIC""];";
+					description="MEDIC - Alpha";
+				};
+				class Item2
+				{
+					position[]={75.332611,0.041685671,65.79248};
+					azimut=-2.9704766;
+					id=5;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="asl_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={69.342133,-0.065546818,53.479492};
+					azimut=0.070666566;
+					id=6;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_teamleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""TL""];";
+					description="TL - Alpha 1";
+				};
+				class Item1
+				{
+					position[]={71.819672,-0.041296437,48.301758};
+					azimut=0.070666566;
+					id=7;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_riflemanat";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AT""];";
+					description="R AT";
+				};
+				class Item2
+				{
+					position[]={74.441254,598.50671,48.532227};
+					azimut=0.070666596;
+					id=8;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_autorifleman_m249";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AR""];";
+					description="AR";
+				};
+				class Item3
+				{
+					position[]={77.094086,-0.10225782,48.704102};
+					azimut=0.070666566;
+					id=9;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AAR""];";
+					description="AAR";
+				};
+				class Item4
+				{
+					position[]={68.17392,-0.074647412,56.098145};
+					id=10;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="a1_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={82.425629,-0.045622684,53.525391};
+					azimut=0.070666566;
+					id=11;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_teamleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""TL""];";
+					description="TL - Alpha 2";
+				};
+				class Item1
+				{
+					position[]={84.894867,-0.087141678,48.348145};
+					azimut=0.070666566;
+					id=12;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_marksman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""MM""];";
+					description="Marksman";
+				};
+				class Item2
+				{
+					position[]={87.519867,-0.055336021,48.577637};
+					azimut=0.070666596;
+					id=13;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_autorifleman_m249";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AR""];";
+					description="AR";
+				};
+				class Item3
+				{
+					position[]={90.179535,-0.021164468,48.747559};
+					azimut=0.070666566;
+					id=14;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AAR""];";
+					description="AAR";
+				};
+				class Item4
+				{
+					position[]={81.995941,-0.0050194822,56.725586};
+					id=15;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="a2_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item4
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={46.457855,0.087132424,61.288086};
+					azimut=-359.40427;
+					id=16;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_squadleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""SL""];";
+					description="SL - Bravo";
+				};
+				class Item1
+				{
+					position[]={43.842377,0.034228489,58.456543};
+					azimut=-359.40399;
+					special="NONE";
+					id=17;
+					side="WEST";
+					vehicle="rhsusf_navy_marpat_wd_medic";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""MEDIC""];";
+					description="MEDIC - Bravo";
+				};
+				class Item2
+				{
+					position[]={46.582611,0.094839036,63.905273};
+					id=18;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="bsl_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item5
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={37.88974,-0.053989239,52.84375};
+					azimut=3.8108227;
+					id=19;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_teamleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""TL""];";
+					description="TL - Bravo 1";
+				};
+				class Item1
+				{
+					position[]={40.014496,-0.040457673,47.516113};
+					azimut=3.8108227;
+					id=20;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_riflemanat";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AT""];";
+					description="R AT";
+				};
+				class Item2
+				{
+					position[]={42.654877,-0.063539244,47.578613};
+					azimut=3.8108201;
+					id=21;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_autorifleman_m249";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AR""];";
+					description="AR";
+				};
+				class Item3
+				{
+					position[]={45.312103,-0.071386345,47.571777};
+					azimut=3.8108227;
+					id=22;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AAR""];";
+					description="AAR";
+				};
+				class Item4
+				{
+					position[]={37.834564,-0.051940143,55.439941};
+					id=23;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="b1_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item6
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={55.064056,0.067084558,52.950684};
+					azimut=2.5026639;
+					id=24;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_teamleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""TL""];";
+					description="TL - Bravo 2";
+				};
+				class Item1
+				{
+					position[]={57.312347,0.033728119,47.670898};
+					azimut=2.5026639;
+					id=25;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""R""];";
+					description="R";
+				};
+				class Item2
+				{
+					position[]={59.943695,0.053040966,47.794922};
+					azimut=2.50266;
+					id=26;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_autorifleman_m249";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AR""];";
+					description="AR";
+				};
+				class Item3
+				{
+					position[]={62.598724,0.056645989,47.845703};
+					azimut=2.5026639;
+					id=27;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_rifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""AAR""];";
+					description="AAR";
+				};
+				class Item4
+				{
+					position[]={55.133636,0.074544452,55.445313};
+					id=28;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="b2_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+		class Item7
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={111.24786,591.46539,55.210938};
+					azimut=-359.909;
+					id=29;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_helipilot";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""PILOT""];";
+					description="Steelrain - Pilot";
+				};
+				class Item1
+				{
+					position[]={112.12921,592.9577,60.143555};
+					id=30;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="steelrain_g = group this; deleteVehicle this;";
+				};
+				class Item2
+				{
+					position[]={108.44707,590.54156,50.566406};
+					azimut=-359.909;
+					id=31;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_helipilot";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""PILOT""];";
+					description="Steelrain - Co-Pilot";
+				};
+			};
+		};
+		class Item8
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={123.25119,588.46063,54.630859};
+					azimut=-359.909;
+					id=32;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_helipilot";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""PILOT""];";
+					description="Arrowhead - Pilot";
+				};
+				class Item1
+				{
+					position[]={124.1367,589.88928,59.565918};
+					id=33;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="arrowhead_g = group this; deleteVehicle this;";
+				};
+				class Item2
+				{
+					position[]={120.44897,587.60956,49.989258};
+					azimut=-359.909;
+					id=34;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_helipilot";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""PILOT""];";
+					description="Arrowhead - Co-Pilot";
+				};
+			};
+		};
+		class Item9
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0;
+					position[]={264.67505,-185.97,49.835815};
+					azimut=0.070666596;
+					id=35;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					leader=1;
+					skill=0.40000001;
+					description="AR";
+				};
+			};
+		};
+		class Item10
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0;
+					position[]={286.77213,0.0082565546,49.835815};
+					azimut=0.070666596;
+					id=36;
+					side="GUER";
+					vehicle="I_Soldier_F";
+					leader=1;
+					skill=0.34949461;
+					description="AR";
+				};
+			};
+		};
+		class Item11
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0;
+					position[]={309.12027,0.14071493,49.835815};
+					azimut=0.070666596;
+					id=37;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.34949461;
+					description="AR";
+				};
+			};
+		};
+		class Item12
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={139.90302,585.08435,56.087341};
+					azimut=0.070666596;
+					id=38;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_crewman";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+					init="this setVariable [""nf_gearing"",""CREW""];";
+					description="Panther - Commander";
+				};
+				class Item1
+				{
+					position[]={142.37225,582.95959,50.910095};
+					azimut=0.070666596;
+					id=39;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_crewman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""CREW""];";
+					description="Panther - Gunner";
+				};
+				class Item2
+				{
+					position[]={144.99725,582.43243,51.139587};
+					azimut=0.070666596;
+					id=40;
+					side="WEST";
+					vehicle="rhsusf_usmc_marpat_wd_crewman";
+					player="PLAY CDG";
+					skill=0.40000001;
+					init="this setVariable [""nf_gearing"",""CREW""];";
+					description="Panther - Driver";
+				};
+				class Item3
+				{
+					position[]={139.47333,586.18463,59.287537};
+					id=41;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					skill=0.5;
+					init="panther_g = group this; deleteVehicle this;";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=1;
+		class Item0
+		{
+			position[]={94.660446,601.26788,72.480774};
+			id=42;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.5;
+			text="acre_box";
+		};
+	};
+	class Markers
+	{
+		items=1;
+		class Item0
+		{
+			position[]={94.771675,605.11249,83.610229};
+			name="respawn_west";
+			type="Empty";
+		};
+	};
+	class Sensors
+	{
+		items=1;
+		class Item0
+		{
+			position[]={328.78589,0.00099567324,50.234619};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="local player";
+			expActiv="null = []execVM ""local.sqf""";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=3052772;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=12040255;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=7462375;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
