@@ -2,7 +2,7 @@
 // Lo sript verrà eseguito dal server, dai client e dai client in JIP
 
 0 setFog [0,0,0];
-setAccTime  1;
+setTimeMultiplier 1;
 
 _fnc_objectiveHint = {
 	/*

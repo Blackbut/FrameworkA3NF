@@ -14,7 +14,7 @@ execVM "local\fnc_briefing.sqf";
 // Server Script
 execVM "server\nf_fnc_groupMarkers.sqf";
 execVM "server\nf_fnc_removeBodies.sqf";
-execVM "server\nf_fnc_baseFort.sqf"
+execVM "server\nf_fnc_baseFort.sqf";
 if (isServer && isMultiplayer) then {
 	execVM "functions.sqf";
 };
