@@ -6,7 +6,7 @@ while {true} do {
 	_deadMen = [];
 	{
 		_var = _x getVariable ["nf_gearing","null"];
-		if (var == "null") then {
+		if (_var == "null") then {
 			_deadMen pushBack _x;
 		};
 	} forEach allDeadMen;
