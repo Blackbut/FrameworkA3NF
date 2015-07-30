@@ -7,6 +7,7 @@ if (isMultiplayer) then {
 
 // Script & Funzioni
 player execVM "local\nf_fnc_gearing.sqf";
+execVM "functions.sqf";
 
 nf_fnc_manageTask = compile preprocessFileLineNumbers "local\nf_fnc_manageTask.sqf";
 

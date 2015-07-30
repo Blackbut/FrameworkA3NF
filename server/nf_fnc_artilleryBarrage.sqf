@@ -37,6 +37,9 @@ _ammo = switch (_type) do {
 };
 
 sleep (_delayMission + random 5);
+[-1,{
+	_this execVM "local\nf_fnc_spawnDust.sqf";
+},[_pos,_spread]] call CBA_fnc_globalExecute;
 
 _soundArray = [0,0,0,0,0];
 _rounds = 1;

@@ -15,7 +15,7 @@ if (count _this < 2) exitWith {};
 
 private ["_array","_oldLeader","_oldGroup","_spawnVar","_spawnTask","_pArea","_pFormation","_pBehaviour","_pSpeed","_gPos","_gSide","_gDir","_syncVeh","_gClassArray","_textVar","_newGroup"];
 
-_array = [NULL,NULL,"",150,"COLUMN","SAFE","LIMITED"];
+_array = [NULL,NULL,"",50,"COLUMN","SAFE","LIMITED"];
 if ((count _this) > 2) then {
 	if (_this select 2 == "GARRISON") then {
 		_array = [NULL,NULL,"",50,true,false];
@@ -41,7 +41,7 @@ _gSide = side _oldLeader;
 _gDir = getDir _oldLeader;
 
 _initDelay = allGroups find _oldGroup;
-sleep (_initDelay / 20);
+sleep (_initDelay * 0.01);
 
 var_spawnGroupArray = var_spawnGroupArray + [_oldGroup];
 
@@ -59,12 +59,12 @@ _gClassArray = [];
 	deleteVehicle _x;
 } forEach units _oldGroup;
 
-_textVar = format ["waitUntil {sleep 1; %1}", _spawnVar];
+_textVar = format ["waitUntil {sleep 2; %1}", _spawnVar];
 call compile (_spawnVar + " = false");
 call compile _textVar;
 
 _delay = var_spawnGroupArray find _oldGroup;
-sleep _delay;
+sleep (_delay * 0.1);
 
 _newGroup = [_gPos, _gSide, _gClassArray] call BIS_fnc_spawnGroup;
 _newGroup setFormDir _gDir;

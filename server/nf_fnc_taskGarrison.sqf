@@ -22,8 +22,8 @@ _group setBehaviour _behaviour;
 _groupSize = count units _group;
 _houseSizeMin = switch (true) do {
 	case (_groupSize <= 2) : {10};
-	case (_groupSize <= 3) : {22};
-	case (_groupSize >= 4) : {24};
+	case (_groupSize <= 3) : {18};
+	case (_groupSize >= 4) : {22};
 };
 
 _nearHouses = nearestObjects [_group, ["House"], _area];

@@ -6,6 +6,7 @@
 
 /// NON MODIFICARE ///
 if (!isServer) exitWith {};
+waitUntil {time > 1};
 
 _group = group (_this select 0);
 _posArray = var_posListArray select (_this select 1);
