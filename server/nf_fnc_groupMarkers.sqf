@@ -8,6 +8,8 @@
 if (!isServer) exitWith {};
 waitUntil {time > 5};
 
+if (count var_groupMarkerArray < 1 OR !var_groupMarkers) exitWith {};
+
 _fnc_createMarker = {
 	_grp = _this select 0;
 	_text = _this select 1;

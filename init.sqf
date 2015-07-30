@@ -44,14 +44,5 @@ var_posListArray = [
 // [gruppo,testo marker,icona marker,colore marker] //
 // La lista completa dei marker è disponibile a questo link ( https://community.bistudio.com/wiki/cfgMarkers )
 var_groupMarkerArray = [
-	[plhq_g,"PL1","b_hq","ColorOrange"],
-	[asl_g,"ASL","b_hq"],
-	[a1_g,"A1","b_inf"],
-	[a2_g,"A2","b_inf"],
-	[bsl_g,"BSL","b_hq","ColorGreen"],
-	[b1_g,"B1","b_inf","ColorGreen"],
-	[b2_g,"B2","b_inf","ColorGreen"],
-	[steelrain_g,"Steelrain","b_air","ColorRed"],
-	[arrowhead_g,"Arrowhead","b_air","ColorRed"],
-	[panther_g,"Panther","b_armor","ColorRed"]
+	//[plhq_g,"PL1","b_hq","ColorOrange"]
 ];
