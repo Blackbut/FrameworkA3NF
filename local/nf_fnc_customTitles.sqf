@@ -1,5 +1,11 @@
+// -------------------------------- //
+//   Creato da: =]NF[= Blackbut  	//
+//     "NF Framework" - 2015 		//
+//   http://www.nerafolgore.it/ 	//
+// -------------------------------- //
+
 if (isDedicated) exitWith {};
-waitUntil {time > 0};
+
 waitUntil {time > 0};
 sleep (_this select 0);
 
@@ -44,7 +50,7 @@ _fnc_dynamicText = {
 		} forEach _newArray;
 		
 		_line ctrlSetText _text;
-		sleep 0.04;
+		sleep 0.05;
 	};
 	
 	_line ctrlSetText (_this select 1);
@@ -53,7 +59,6 @@ _fnc_dynamicText = {
 _fnc_dynamicTime = {
 	disableSerialization;
 	_hud = var_title_hudIDD select 0;
-	//_line = _hud displayCtrl _this;
 	_line = _this;
 	
 	_year = str (date select 0);
@@ -94,40 +99,70 @@ _fnc_dynamicTime = {
 };
 
 _hud = var_title_hudIDD select 0;
-_line1 = _hud displayCtrl 61000;
-_line2 = _hud displayCtrl 62000;
-_line3 = _hud displayCtrl 63000;
-_line4 = _hud displayCtrl 64000;
-_line5 = _hud displayCtrl 65000;
-_lines = [_line1,_line2,_line3,_line4,_line5];
+_lines = [
+	_hud displayCtrl 6101,
+	_hud displayCtrl 6102,
+	_hud displayCtrl 6103,
+	_hud displayCtrl 6104,
+	_hud displayCtrl 6105,
+	_hud displayCtrl 6106,
+	_hud displayCtrl 6107,
+	_hud displayCtrl 6108
+];
 
-_textArray = [];
-for "_i" from 1 to (count _this - 1) do {
-	_textArray = _textArray + [_this select _i];
-};
+_textArray = _this;
+_textArray deleteAt 0;
 
+_writtenLines = [];
 _id = 0;
 {
+	_curLine = _lines select _id;
 	if (_x != "") then {
 		if (_x != "time") then {
-			[(_lines select _id),_x] spawn _fnc_dynamicText;
+			[_curLine,_x] spawn _fnc_dynamicText;
 		} else {
-			(_lines select _id) spawn _fnc_dynamicTime;
+			_curLine spawn _fnc_dynamicTime;
 		};
+	};
 		
-		_id = _id + 1;
-		sleep 2;
+	_id = _id + 1;
+	if (_x != "") then {
+		_textLenght = (count (toArray _x)) * 0.09;
+		sleep _textLenght;
+	} else {
+		sleep 0.5;
+	};
+
+	_writtenLines pushBack _curLine;
+	_lineCount = count _writtenLines;
+	_lineY = 0.9;
+	if (_lineCount < count _textArray) then {
+		_lineH = safeZoneH * 0.03;
+		for "_i" from 0 to _lineCount do {
+			(_writtenLines select _i) ctrlSetPosition [safezoneX, _lineY - _lineH*(_lineCount - _i)];
+			(_writtenLines select _i) ctrlCommit 0;
+		};
 	};
 } forEach _textArray;
 	
 sleep 5;
 	
 _alpha = 0.8;
-for "_i" from 0 to 50 do {
+_fadeTime = 160;
+for "_i" from 0 to _fadeTime do {
 	{
-		_x ctrlSetTextColor [0.9, 0.9, 0.9, _alpha];
+		if (_x != _lines select 0 && _i < (_fadeTime / 2)) then {
+			_x ctrlSetTextColor [0.9, 0.9, 0.9, _alpha];
+		};
+		
+		if (_x == _lines select 0 && _i > (_fadeTime / 2 + 10)) then {
+			_x ctrlSetTextColor [0.9, 0.9, 0.9, _alpha];
+		};
 	} forEach _lines;
-	_alpha = _alpha - 0.02;
+	
+	_alpha = _alpha - 0.017;
+	if (_i > (_fadeTime / 2) && _i < (_fadeTime / 2 + 10)) then {_alpha = 0.8};
+	
 	sleep 0.03;
 };
 	

@@ -15,10 +15,10 @@ if (count _this < 2) exitWith {};
 
 private ["_array","_oldLeader","_oldGroup","_spawnVar","_spawnTask","_pArea","_pFormation","_pBehaviour","_pSpeed","_gPos","_gSide","_gDir","_syncVeh","_gClassArray","_textVar","_newGroup"];
 
-_array = [NULL,NULL,"",50,"COLUMN","SAFE","LIMITED"];
+_array = [null,null,"",50,"COLUMN","SAFE","LIMITED"];
 if ((count _this) > 2) then {
 	if (_this select 2 == "GARRISON") then {
-		_array = [NULL,NULL,"",50,true,false];
+		_array = [null,null,"",50,true,false];
 	};
 };
 
@@ -64,9 +64,15 @@ call compile (_spawnVar + " = false");
 call compile _textVar;
 
 _delay = var_spawnGroupArray find _oldGroup;
-sleep (_delay * 0.1);
+sleep (_delay * 0.3);
 
-_newGroup = [_gPos, _gSide, _gClassArray] call BIS_fnc_spawnGroup;
+//_newGroup = [_gPos, _gSide, _gClassArray] call BIS_fnc_spawnGroup;
+_newGroup = createGroup _gSide;
+{
+	_x createUnit [_gPos,_newGroup];
+	sleep 0.3;
+} forEach _gClassArray;
+
 _newGroup setFormDir _gDir;
 {
 	_x setDir _gDir;

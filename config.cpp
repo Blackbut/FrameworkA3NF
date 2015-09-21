@@ -968,11 +968,11 @@ class RscTitles {
 		};
 	};
 	
-	#define hud_title_y 0.8
-	#define hud_title_h 0.04
+	#define hud_title_y 0.9
+	#define hud_title_h (safeZoneH * 0.03)
 	
 	class nf_titleHUD {
-		idd = 60000;
+		idd = 6100;
 		duration = 1e+011;
 		onLoad = "var_title_hudIDD = [(_this select 0)]";
 		
@@ -990,12 +990,12 @@ class RscTitles {
 	
 		class controls {
 			class textPlain_1 : MyRscBox {
-				idc = 61000;
+				idc = 6101;
 				colorText[] = {0.9, 0.9, 0.9, 0.8};
 				style = ST_RIGHT;
-				font = "PuristaSemiBold";
-				sizeEx = (hud_title_h + 0.005);
-				shadow = 0;
+				font = "PuristaBold";
+				sizeEx = hud_title_h;
+				shadow = 2;
 				x = safeZoneX;
 				y = hud_title_y;
 				w = safeZoneW - 0.02;
@@ -1003,23 +1003,35 @@ class RscTitles {
 			};
 		
 			class textPlain_2 : textPlain_1 {
-				idc = 62000;
-				y = hud_title_y + hud_title_h;
+				idc = 6102;
+				//y = hud_title_y + hud_title_h;
 			};
 			
 			class textPlain_3 : textPlain_1 {
-				idc = 63000;
-				y = hud_title_y + hud_title_h*2;
+				idc = 6103;
+				//y = hud_title_y + hud_title_h*2;
 			};
 			
 			class textPlain_4 : textPlain_1 {
-				idc = 64000;
-				y = hud_title_y + hud_title_h*3;
+				idc = 6104;
+				//y = hud_title_y + hud_title_h*3;
 			};
 			
 			class textPlain_5 : textPlain_1 {
-				idc = 65000;
-				y = hud_title_y + hud_title_h*4;
+				idc = 6105;
+				//y = hud_title_y + hud_title_h*4;
+			};
+			
+			class textPlain_6 : textPlain_1 {
+				idc = 6106;
+			};
+			
+			class textPlain_7 : textPlain_1 {
+				idc = 6107;
+			};
+			
+			class textPlain_8 : textPlain_1 {
+				idc = 6108;
 			};
 		};
 	};

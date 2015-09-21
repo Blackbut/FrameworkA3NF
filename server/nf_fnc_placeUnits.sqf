@@ -1,6 +1,6 @@
 // -------------------------------- //
 //   Creato da: =]NF[= Blackbut  	//
-//     "NF Framework" - 2014 		//
+//     "NF Framework" - 2015 		//
 //   http://www.nerafolgore.it/ 	//
 // -------------------------------- //
 
@@ -25,6 +25,7 @@ _unitID = 1;
 	_x setUnitPos (_stanceArray select (_unitArray select 2));
 	
 	_unitID = _unitID + 1;
+	sleep 0.35;
 } forEach units _group;
 
 deleteGroup _group;

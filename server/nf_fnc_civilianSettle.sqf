@@ -5,16 +5,19 @@
 // -------------------------------- //
 
 // STRINGA DA INSERIRE NELL' "ACT" DEL TRIGGER //
-// null = ["town_marker",150,4,true] execVM "server\nf_fnc_civilianSettle.sqf";
+// null = [this,150,4,true] execVM "server\nf_fnc_civilianSettle.sqf";
 // [marker,area,densità (Da 1 a 10),civili nelle case] //
+// Per avviare lo script applicate l'Init ad un GameLogic e piazzatelo sopra la città che volete riempire PS: Al momento la funzione per gli edifici è disabilitata
 
 /// NON MODIFICARE ///
-_array = [NULL,150,3,true];
+if (!isServer) exitWith {};
+
+_array = [NULL,100,3,true];
 for "_i" from 0 to ((count _this) - 1) do {
 	_array set [_i, _this select _i];
 };
 
-_marker = _array select 0;
+_marker = getPos(_array select 0);
 _area = _array select 1;
 _density = _array select 2;
 _house = _array select 3;
@@ -33,25 +36,21 @@ _fnc_randomWalk = {
 	sleep (random 10);
 	while {alive _civ} do {
 		if (behaviour _civ in ["AWARE","COMBAT"]) then {
+			_civ setUnitPos "DOWN";
 			sleep 5;
 		} else {
+			_civ setUnitPos "UP";
+			
 			_radius = round((_area / 5) + random 30);
 			_dir = round(random 360);
 			_wpPos = [(getPos _civ select 0) + (_radius * sin(_dir)), (getPos _civ select 1) + (_radius * cos(_dir)), 0];
-		
-			_arrow = objNull;
-			if (_wpPos distance _center < _area OR !(isOnRoad _wpPos)) then {
-				if (!isMultiplayer) then {
-					_arrow = "Sign_sphere100cm_EP1" createVehicle _wpPos;
-					_arrow setPos _wpPos;
-				};
 			
+			if (_wpPos distance _center < _area && !(isOnRoad _wpPos)) then {		
 				_wp = _group addWaypoint [_wpPos, 0];
 				_wp setWaypointSpeed "LIMITED";
 				_wp setWaypointType "MOVE";
 			
-				sleep (10 + round(random 30));
-				deleteVehicle _arrow;
+				sleep (10 + round(random 10));
 			};
 		};
 		sleep 0.5;
@@ -69,16 +68,24 @@ _civArray = [
 	"C_man_polo_3_F_euro",
 	"C_man_polo_4_F_euro",
 	"C_man_polo_5_F_euro",
-	"C_man_polo_6_F_euro"
+	"C_man_polo_6_F_euro",
+	"C_man_1_1_F",
+	"C_man_1_2_F",
+	"C_man_1_3_F",
+	"C_man_shorts_2_F",
+	"C_man_shorts_3_F"
 ];
 
 _rate = ceil((_area / 20)*_density);
 for "_i" from 0 to _rate do {
 	_class = _civArray call BIS_fnc_selectRandom;
 	
-	_spawnPos = [getMarkerPos _marker, _area] call CBA_fnc_randPos;
+	_spawnPos = [_marker, _area] call CBA_fnc_randPos;
+	_group = createGroup civilian;
 	_class createUnit [_spawnPos,_group];
-	[_group,_area,getMarkerPos _marker] spawn _fnc_randomWalk;
+	_group setBehaviour "SAFE";
+	
+	[_group,_area,_marker] spawn _fnc_randomWalk;
 };
 
 /*

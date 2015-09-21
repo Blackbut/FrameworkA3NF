@@ -40,6 +40,11 @@ var_posListArray = [
 
 ];
 
+// AGGIUNGERE I CLASSNAME DA AGGIUNGERE AL BUILD MENU
+[
+	
+] spawn fnc_be_addCustomObject;
+
 // AGGIUNGERE I GRUPPI A CUI ASSEGNARE UN MARKER TENENDOLI SEPARATI DA UNA VIRGOLA " , " //
 // [gruppo,testo marker,icona marker,colore marker] //
 // La lista completa dei marker è disponibile a questo link ( https://community.bistudio.com/wiki/cfgMarkers )
